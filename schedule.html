@@ -10,13 +10,59 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚵</text></svg>" />
 </head>
 <body>
-
-  <!-- Announcement Bar -->
-  <div class="announcement-bar" id="announcement-bar" role="banner">
-    <span>🏆 Next Race: <strong>Sept 12/13 – Fort Tuthill County Park, Flagstaff</strong> — <a href="#race-1">View Details</a></span>
-    <button class="announcement-close" id="announcement-close" aria-label="Dismiss announcement">✕</button>
+  <!-- News Ticker -->
+  <div class="ticker-bar" role="banner" aria-label="Team announcements">
+    <span class="ticker-label">📢 News</span>
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
+        <span class="ticker-sep">❱</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
+        <span class="ticker-sep">❱</span>
+      </div>
+    </div>
   </div>
-
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-brand">
@@ -151,9 +197,9 @@
             <!-- Race 1 - NEXT -->
             <article class="race-card race-next" id="race-1" aria-label="Race 1 - Fort Tuthill County Park - NEXT">
               <div class="race-card-header">
-                <div class="race-date-block" aria-label="September 12-13">
+                <div class="race-date-block" aria-label="September 13">
                   <div class="month">Sept</div>
-                  <div class="day">12–13</div>
+                  <div class="day">13</div>
                   <div class="year">2026</div>
                 </div>
                 <div class="race-info">
@@ -164,19 +210,19 @@
                   <div class="race-meta">
                     <span class="race-meta-item">📍 Flagstaff, AZ</span>
                     <span class="race-meta-item">🏁 ACA Round 1</span>
-                    <span class="race-meta-item">🗓️ South: Sept 12 · North: Sept 13</span>
+                    <span class="race-meta-item">🗓️ Sunday, Sept 13 · North Division</span>
                   </div>
                 </div>
               </div>
               <div class="race-card-body">
                 <div class="race-details-grid">
                   <div class="race-detail">
-                    <div class="race-detail-label">South Division</div>
-                    <div class="race-detail-value">Saturday, Sept 12</div>
+                    <div class="race-detail-label">Date</div>
+                    <div class="race-detail-value">Sunday, Sept 13</div>
                   </div>
                   <div class="race-detail">
-                    <div class="race-detail-label">North Division</div>
-                    <div class="race-detail-value">Sunday, Sept 13</div>
+                    <div class="race-detail-label">Division</div>
+                    <div class="race-detail-value">North Division</div>
                   </div>
                   <div class="race-detail">
                     <div class="race-detail-label">Category</div>
@@ -254,9 +300,9 @@
             <!-- Race 3 -->
             <article class="race-card" id="race-3" aria-label="Race 3 - Venue TBA">
               <div class="race-card-header">
-                <div class="race-date-block" aria-label="October 10-11">
+                <div class="race-date-block" aria-label="October 11">
                   <div class="month">Oct</div>
-                  <div class="day">10–11</div>
+                  <div class="day">11</div>
                   <div class="year">2026</div>
                 </div>
                 <div class="race-info">
@@ -267,19 +313,19 @@
                   <div class="race-meta">
                     <span class="race-meta-item">📍 Location TBA</span>
                     <span class="race-meta-item">🏁 ACA Round 3</span>
-                    <span class="race-meta-item">🗓️ South: Oct 10 · North: Oct 11</span>
+                    <span class="race-meta-item">🗓️ Sunday, Oct 11 · North Division</span>
                   </div>
                 </div>
               </div>
               <div class="race-card-body">
                 <div class="race-details-grid">
                   <div class="race-detail">
-                    <div class="race-detail-label">South Division</div>
-                    <div class="race-detail-value">Saturday, Oct 10</div>
+                    <div class="race-detail-label">Date</div>
+                    <div class="race-detail-value">Sunday, Oct 11</div>
                   </div>
                   <div class="race-detail">
-                    <div class="race-detail-label">North Division</div>
-                    <div class="race-detail-value">Sunday, Oct 11</div>
+                    <div class="race-detail-label">Division</div>
+                    <div class="race-detail-value">North Division</div>
                   </div>
                   <div class="race-detail">
                     <div class="race-detail-label">Category</div>
@@ -308,9 +354,9 @@
             <!-- Race 4 -->
             <article class="race-card" id="race-4" aria-label="Race 4 - McDowell Mountain Regional Park">
               <div class="race-card-header">
-                <div class="race-date-block" aria-label="October 24-25">
+                <div class="race-date-block" aria-label="October 24">
                   <div class="month">Oct</div>
-                  <div class="day">24–25</div>
+                  <div class="day">24</div>
                   <div class="year">2026</div>
                 </div>
                 <div class="race-info">
@@ -321,19 +367,19 @@
                   <div class="race-meta">
                     <span class="race-meta-item">📍 Fountain Hills, AZ</span>
                     <span class="race-meta-item">🏁 ACA Round 4</span>
-                    <span class="race-meta-item">🗓️ North: Oct 24 · South: Oct 25</span>
+                    <span class="race-meta-item">🗓️ Saturday, Oct 24 · North Division</span>
                   </div>
                 </div>
               </div>
               <div class="race-card-body">
                 <div class="race-details-grid">
                   <div class="race-detail">
-                    <div class="race-detail-label">North Division</div>
+                    <div class="race-detail-label">Date</div>
                     <div class="race-detail-value">Saturday, Oct 24</div>
                   </div>
                   <div class="race-detail">
-                    <div class="race-detail-label">South Division</div>
-                    <div class="race-detail-value">Sunday, Oct 25</div>
+                    <div class="race-detail-label">Division</div>
+                    <div class="race-detail-value">North Division</div>
                   </div>
                   <div class="race-detail">
                     <div class="race-detail-label">Category</div>
@@ -447,7 +493,7 @@
             <p class="text-muted text-sm mb-2">Showing upcoming races only.</p>
             <div class="info-box info">
               <div class="info-box-title">ℹ️ Upcoming Races</div>
-              <p>All 2026 races are still ahead — Race #1 (Sept 12/13 – Fort Tuthill, Flagstaff), Race #2 (Sept 26 – Pioneer Park, Prescott), Race #3 (Oct 10/11 – Venue TBA), Race #4 (Oct 24/25 – McDowell Mountain, Fountain Hills), and the State Championships (Nov 7–8 – Wren Arena, Fort Huachuca). Switch to "All Races" for full details.</p>
+              <p>All 2026 races are still ahead — Race #1 (Sept 13 – Fort Tuthill, Flagstaff), Race #2 (Sept 26 – Pioneer Park, Prescott), Race #3 (Oct 11 – Venue TBA), Race #4 (Oct 24 – McDowell Mountain, Fountain Hills), and the State Championships (Nov 7–8 – Wren Arena, Fort Huachuca). Switch to "All Races" for full details.</p>
             </div>
           </div>
 
@@ -458,6 +504,237 @@
               <div class="info-box-title">📋 No Completed Races Yet</div>
               <p>The 2026 season has not started. View previous season results on the <a href="https://arizonacycling.org/races-results/" target="_blank" rel="noopener noreferrer">Arizona Cycling website</a>.</p>
             </div>
+          </div>
+        </div>
+
+        <!-- Race Day Schedule -->
+        <div style="margin-top:2rem;">
+          <h2 class="section-title mb-2">🕐 Race Day Schedule</h2>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-header-title">📋 Typical Race Day Timeline</span>
+            </div>
+            <div class="card-body" style="padding:0;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--primary);width:7rem;">7:00 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">Middle School Head Coaches Meeting</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--secondary-dark);">8:00 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;"><strong>Middle School Boys Race</strong></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--secondary-dark);">8:45 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;"><strong>Middle School Girls Race</strong></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--primary);">9:00 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">High School Head Coaches Meeting</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--text-medium);">10:00 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">High School Boys Varsity/JV1 Race</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--accent);">10:30 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;"><strong>🏅 Middle School Awards</strong></td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--text-medium);">11:30 a.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">High School Girls Race</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--text-medium);">1:00 p.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">High School Boys JV2/Freshman Race</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.75rem 1.25rem;font-weight:700;white-space:nowrap;color:var(--text-medium);">3:00 p.m.</td>
+                    <td style="padding:0.75rem 1.25rem;">High School Awards</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:var(--text-medium);margin-top:0.5rem;">* Times are approximate and subject to change. Arrive <strong>at least 60 minutes before your race</strong> for check-in and warm-up.</p>
+        </div>
+
+        <!-- Race Categories & Wave Start Times -->
+        <div style="margin-top:2rem;">
+          <h2 class="section-title mb-2">🏁 Race Categories &amp; Wave Start Times</h2>
+          <div class="card" style="overflow-x:auto;">
+            <div class="card-body" style="padding:0;">
+              <table style="width:100%;border-collapse:collapse;font-size:0.875rem;min-width:520px;">
+                <thead>
+                  <tr style="background:var(--bg-light);border-bottom:2px solid var(--border);">
+                    <th style="padding:0.65rem 1rem;text-align:left;font-weight:700;">Category</th>
+                    <th style="padding:0.65rem 1rem;text-align:left;font-weight:700;">Plate</th>
+                    <th style="padding:0.65rem 1rem;text-align:center;font-weight:700;">Staging</th>
+                    <th style="padding:0.65rem 1rem;text-align:center;font-weight:700;">Start</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Wave 1 -->
+                  <tr style="background:#1a5276;color:#fff;">
+                    <td colspan="4" style="padding:0.5rem 1rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;">WAVE 1 — Middle School Boys</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys 8th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#2980b9;display:inline-block;flex-shrink:0;"></span>Blue 5000s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">7:45 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:00 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Boys 7th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#b87333;display:inline-block;flex-shrink:0;"></span>Copper 6000s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">7:50 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:05 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys 6th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#d4ac0d;display:inline-block;flex-shrink:0;"></span>Yellow 7000s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">7:55 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:10 a.m.</td>
+                  </tr>
+                  <!-- Wave 2 -->
+                  <tr style="background:#1a5276;color:#fff;">
+                    <td colspan="4" style="padding:0.5rem 1rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;">WAVE 2 — Middle School Girls</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Girls 8th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#2980b9;display:inline-block;flex-shrink:0;"></span>Blue 500s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">8:30 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:45 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Girls 7th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#b87333;display:inline-block;flex-shrink:0;"></span>Copper 600s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">8:35 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:50 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Girls 6th Grade</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#d4ac0d;display:inline-block;flex-shrink:0;"></span>Yellow 700s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">8:40 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">8:55 a.m.</td>
+                  </tr>
+                  <!-- Wave 3 -->
+                  <tr style="background:#1a5276;color:#fff;">
+                    <td colspan="4" style="padding:0.5rem 1rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;">WAVE 3 — High School Boys Varsity / JV1</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys Varsity</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#2980b9;display:inline-block;flex-shrink:0;"></span>Blue 1000s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">9:45 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">10:00 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Boys JV1 – Division 1</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#b87333;display:inline-block;flex-shrink:0;"></span>Copper 2000–2499</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">9:50 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">10:05 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys JV1 – Division 2</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#d4ac0d;display:inline-block;flex-shrink:0;"></span>Yellow 2500–2999</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">9:55 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">10:10 a.m.</td>
+                  </tr>
+                  <!-- Wave 4 -->
+                  <tr style="background:#1a5276;color:#fff;">
+                    <td colspan="4" style="padding:0.5rem 1rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;">WAVE 4 — High School Girls</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Girls Varsity</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#2980b9;display:inline-block;flex-shrink:0;"></span>Blue 100s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">11:15 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">11:30 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Girls Junior Varsity 1</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#b87333;display:inline-block;flex-shrink:0;"></span>Copper 200s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">11:20 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">11:35 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Girls Junior Varsity 2</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#d4ac0d;display:inline-block;flex-shrink:0;"></span>Yellow 300s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">11:25 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">11:40 a.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Girls Freshman</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#7f8c8d;display:inline-block;flex-shrink:0;"></span>Grey 400s</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">11:30 a.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">11:45 a.m.</td>
+                  </tr>
+                  <!-- Wave 5 -->
+                  <tr style="background:#1a5276;color:#fff;">
+                    <td colspan="4" style="padding:0.5rem 1rem;font-weight:700;font-size:0.8rem;letter-spacing:0.05em;">WAVE 5 — High School Boys JV2 / Freshman</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys JV2 – Division 1</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#b87333;display:inline-block;flex-shrink:0;"></span>Copper 3000–3499</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">12:45 p.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">1:00 p.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);background:var(--bg-light);">
+                    <td style="padding:0.65rem 1rem;">Boys JV2 – Division 2</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#d4ac0d;display:inline-block;flex-shrink:0;"></span>Yellow 3500–3999</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">12:50 p.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">1:05 p.m.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;">Boys Freshman – Division 1</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#7f8c8d;display:inline-block;flex-shrink:0;"></span>Grey 4000–4499</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">12:55 p.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">1:10 p.m.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.65rem 1rem;">Boys Freshman – Division 2</td>
+                    <td style="padding:0.65rem 1rem;"><span style="display:inline-flex;align-items:center;gap:0.35rem;"><span style="width:10px;height:10px;border-radius:50%;background:#e74c3c;display:inline-block;flex-shrink:0;"></span>Red 4500–4999</span></td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">1:00 p.m.</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;font-weight:700;">1:15 p.m.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:var(--text-medium);margin-top:0.5rem;">* Staging time is when riders should be lined up at the start. <strong>Be at staging before your staging time</strong> — the race will not wait.</p>
+        </div>
+
+        <!-- Race Number Plates -->
+        <div style="margin-top:2rem;">
+          <h2 class="section-title mb-2">🔢 Race Number Plates</h2>
+          <div class="info-box warning">
+            <div class="info-box-title">⚠️ Important – Number Plate Care &amp; Return</div>
+            <p>All student-athletes will receive a race number plate and riders will use the <strong>same plate for the entire race series.</strong> Number plates have <strong>chip timing transponders on the backside</strong> — exercise care to avoid damage.</p>
+            <p style="margin-top:0.5rem;">Please <strong>remove the number plate from the bike and return it to the head coach</strong> before loading for transport to prevent damage or loss.</p>
+            <p style="margin-top:0.5rem;">Replacement number plates will be available at the registration tent for <strong>$25.</strong></p>
+          </div>
+        </div>
+
+        <!-- Pre-Ride -->
+        <div style="margin-top:2rem;">
+          <h2 class="section-title mb-2">🚵 Pre-Ride</h2>
+          <div class="info-box info mb-2">
+            <div class="info-box-title">📋 Course Pre-Ride Hours</div>
+            <p>The course will be open for pre-ride to all registered student-athletes and licensed coaches on the following schedule:</p>
+            <ul style="margin:0.75rem 0 0 1.25rem;font-size:0.9rem;line-height:2;">
+              <li><strong>Friday, 12:00 p.m. – sunset</strong> — Open to all registered student-athletes and licensed coaches</li>
+              <li><strong>Saturday, ~3:00 p.m. – sunset</strong> — Open following the conclusion of racing</li>
+            </ul>
+          </div>
+          <div class="info-box warning">
+            <div class="info-box-title">⚠️ Friday 3:00 p.m. – 4:00 p.m. — Restricted Window</div>
+            <p>From <strong>3:00 p.m. to 4:00 p.m. on Friday</strong>, the course is open to the following groups <strong>only:</strong></p>
+            <ul style="margin:0.5rem 0 0 1.25rem;font-size:0.9rem;line-height:2;">
+              <li>High school female student-athletes</li>
+              <li>Middle school student-athletes (female and male)</li>
+              <li>Their licensed coaches</li>
+            </ul>
+            <p style="margin-top:0.5rem;"><strong>High school boys are not allowed on the course during this period.</strong></p>
           </div>
         </div>
 
@@ -534,7 +811,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>🚵 STMS Mountain Bike Team</h3>
-          <p class="tagline">Sonoran Trails Middle School · CCUSD 93</p>
+          <p class="tagline">Sonoran Trails Middle School · CCUSD 93 · 501(c)(3) Non-Profit</p>
           <p style="font-size:0.82rem;line-height:1.6;">
             Competing in the Arizona Cycling Association and building student-athletes one trail at a time.
           </p>
@@ -567,8 +844,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 STMS Mountain Bike Team. All rights reserved.</span>
-        <span>Powered by ☀️ Arizona sunshine and 🚵 two wheels.</span>
+        <span>© 2026 STMS Mountain Bike Team · All rights reserved.</span>
       </div>
     </div>
   </footer>

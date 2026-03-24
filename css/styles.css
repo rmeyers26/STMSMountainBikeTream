@@ -26,6 +26,7 @@
   --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --transition: 0.25s ease;
   --nav-height: 64px;
+  --ticker-height: 2.2rem;
 }
 
 /* Reset & Base */
@@ -75,7 +76,7 @@ ul {
    ============================================= */
 .navbar {
   position: sticky;
-  top: 0;
+  top: var(--ticker-height);
   z-index: 1000;
   background: var(--primary-dark);
   height: var(--nav-height);
@@ -241,7 +242,7 @@ ul {
    PAGE LAYOUT
    ============================================= */
 .page-content {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--nav-height) - var(--ticker-height));
 }
 
 .container {
@@ -561,41 +562,86 @@ ul {
 /* =============================================
    ANNOUNCEMENT BANNER
    ============================================= */
-.announcement-bar {
+.ticker-bar {
   background: var(--secondary);
   color: var(--text-dark);
-  padding: 0.6rem 1rem;
-  text-align: center;
   font-size: 0.85rem;
   font-weight: 600;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  position: relative;
+  align-items: stretch;
+  overflow: hidden;
+  height: var(--ticker-height);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
 }
 
-.announcement-bar a {
+.ticker-label {
+  flex-shrink: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0 0.9rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 80s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  padding: 0 1.25rem;
+}
+
+.ticker-item a {
   color: var(--primary-dark);
   text-decoration: underline;
   font-weight: 700;
 }
 
-.announcement-close {
-  position: absolute;
-  right: 0.75rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  color: var(--text-dark);
-  padding: 0 0.25rem;
-  line-height: 1;
-  opacity: 0.7;
+.ticker-sep {
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  padding: 0 0.1rem;
 }
 
-.announcement-close:hover {
-  opacity: 1;
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Ticker mobile tweaks */
+@media (max-width: 480px) {
+  .ticker-bar {
+    font-size: 0.78rem;
+  }
+  .ticker-label {
+    padding: 0 0.5rem;
+    font-size: 0.65rem;
+  }
+  .ticker-item {
+    padding: 0 0.75rem;
+  }
 }
 
 /* =============================================
@@ -701,6 +747,7 @@ ul {
 .announcement-content .tag.tag-practice { background: var(--primary-light); color: white; }
 .announcement-content .tag.tag-info { background: var(--primary); color: white; }
 .announcement-content .tag.tag-volunteer { background: #6C5CE7; color: white; }
+.announcement-content .tag.tag-warning { background: #e67e22; color: white; }
 
 .announcement-content h4 {
   font-size: 0.95rem;
@@ -1176,6 +1223,11 @@ textarea.form-control {
   background: linear-gradient(135deg, #FAFAFA, #F0F0F0);
 }
 
+.sponsor-card.bronze {
+  border-color: #B87333;
+  background: linear-gradient(135deg, #FDF6F0, #F5E8D8);
+}
+
 .sponsor-logo-placeholder {
   width: 100%;
   height: 70px;
@@ -1640,7 +1692,7 @@ textarea.form-control {
    ============================================= */
 @media print {
   .navbar,
-  .announcement-bar,
+  .ticker-bar,
   .footer,
   .btn,
   .nav-toggle {

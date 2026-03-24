@@ -10,13 +10,59 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚵</text></svg>" />
 </head>
 <body>
-
-  <!-- Announcement Bar -->
-  <div class="announcement-bar" id="announcement-bar" role="banner">
-    <span>⭐ Sponsor opportunities available for 2026! <a href="#become-sponsor">Learn More →</a></span>
-    <button class="announcement-close" id="announcement-close" aria-label="Dismiss announcement">✕</button>
+  <!-- News Ticker -->
+  <div class="ticker-bar" role="banner" aria-label="Team announcements">
+    <span class="ticker-label">📢 News</span>
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
+        <span class="ticker-sep">❱</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
+        <span class="ticker-sep">❱</span>
+        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
+        <span class="ticker-sep">❱</span>
+      </div>
+    </div>
   </div>
-
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-brand">
@@ -86,22 +132,28 @@
               </div>
             </div>
             <div style="border-top:1px solid var(--border);padding-top:1.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;">
-              <p style="margin:0;font-size:0.9rem;color:var(--text-medium);max-width:480px;line-height:1.6;">
+              <p style="margin:0;font-size:0.9rem;color:var(--text-medium);max-width:400px;line-height:1.6;">
                 Every dollar goes directly to student athletes — race entries, jerseys, coaching, and equipment.
-                Donations are tax-deductible through the CCUSD 93 Foundation.
               </p>
-              <a href="mailto:cshsmtbteam@gmail.com?subject=Donation%20to%20STMS%20Mountain%20Bike%20Team" class="btn btn-primary" style="flex-shrink:0;">
-                💚 Donate Now
-              </a>
+              <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;flex-shrink:0;">
+                <a href="https://venmo.com/u/STMS-MountainBike" target="_blank" rel="noopener noreferrer"
+                   style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border-radius:var(--radius-sm);background:#3D95CE;color:white;font-weight:700;font-size:0.88rem;text-decoration:none;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.5 2c.8 1.3 1.1 2.6 1.1 4.3 0 5.4-4.6 12.4-8.4 17.3H4.3L1 3.5l6.8-.6 1.7 13.4c1.6-2.7 3.5-6.9 3.5-9.8 0-1.6-.3-2.7-.7-3.6L19.5 2z"/></svg>
+                  Venmo
+                </a>
+                <a href="mailto:cshsmtbteam@gmail.com?subject=Donation%20to%20STMS%20Mountain%20Bike%20Team" class="btn btn-primary">
+                  💚 Donate Now
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Gold Sponsors -->
+        <!-- Gold Sponsors — $1,000+ -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥇</span>
-            Gold Sponsors
+            Gold Sponsors — $1,000+
           </div>
           <div class="sponsor-grid tier-gold">
             <div class="sponsor-card gold">
@@ -117,7 +169,7 @@
               <a href="#become-sponsor" class="btn btn-sm btn-outline-dark">Website</a>
             </div>
             <div class="sponsor-card gold" style="border-style:dashed;background:var(--bg-light);box-shadow:none;opacity:0.6;">
-              <div class="sponsor-logo-placeholder" style="border-color:var(--secondary);color:var(--secondary);">+ Your Business</div>
+              <div class="sponsor-logo-placeholder" style="border-color:#FFD700;color:#B8860B;">+ Your Business</div>
               <h4 style="color:var(--text-medium);">Gold Sponsor Spot Available</h4>
               <p>Join our top-tier sponsors and get maximum visibility</p>
               <a href="#become-sponsor" class="btn btn-sm btn-primary">Claim Spot</a>
@@ -125,11 +177,11 @@
           </div>
         </div>
 
-        <!-- Silver Sponsors -->
+        <!-- Silver Sponsors — $500 -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥈</span>
-            Silver Sponsors
+            Silver Sponsors — $500
           </div>
           <div class="sponsor-grid tier-silver">
             <div class="sponsor-card silver">
@@ -143,7 +195,7 @@
               <p>Fueling riders with trail snacks since 2018</p>
             </div>
             <div class="sponsor-card silver" style="border-style:dashed;background:var(--bg-light);box-shadow:none;opacity:0.6;">
-              <div class="sponsor-logo-placeholder" style="border-color:#888;color:#888;">+ Your Business</div>
+              <div class="sponsor-logo-placeholder" style="border-color:#C0C0C0;color:#888;">+ Your Business</div>
               <h4 style="color:var(--text-medium);">Silver Sponsor Available</h4>
               <p>Great visibility at local and regional races</p>
               <a href="#become-sponsor" class="btn btn-sm btn-outline-dark">Learn More</a>
@@ -151,27 +203,27 @@
           </div>
         </div>
 
-        <!-- Bronze Sponsors -->
+        <!-- Bronze Sponsors — $250 -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥉</span>
-            Bronze Sponsors
+            Bronze Sponsors — $250
           </div>
           <div class="sponsor-grid tier-bronze">
-            <div class="sponsor-card">
+            <div class="sponsor-card bronze">
               <div class="sponsor-logo-placeholder" style="height:50px;">Logo</div>
               <h4>Scottsdale Smoothie Bar</h4>
             </div>
-            <div class="sponsor-card">
+            <div class="sponsor-card bronze">
               <div class="sponsor-logo-placeholder" style="height:50px;">Logo</div>
               <h4>Deer Valley Dental</h4>
             </div>
-            <div class="sponsor-card">
+            <div class="sponsor-card bronze">
               <div class="sponsor-logo-placeholder" style="height:50px;">Logo</div>
               <h4>Cave Creek Coffee</h4>
             </div>
             <div class="sponsor-card" style="border-style:dashed;background:var(--bg-light);box-shadow:none;opacity:0.6;">
-              <div class="sponsor-logo-placeholder" style="height:50px;border-color:#ccc;color:#aaa;">+</div>
+              <div class="sponsor-logo-placeholder" style="height:50px;border-color:#B87333;color:#B87333;">+</div>
               <h4 style="color:var(--text-medium);font-size:0.82rem;">Open Spot</h4>
               <a href="#become-sponsor" class="btn btn-sm btn-outline-dark" style="font-size:0.75rem;">Join</a>
             </div>
@@ -208,11 +260,9 @@
               We're grateful for the in-kind and community support from the following organizations and individuals:
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
-              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">CCUSD 93 District</span>
-              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">Sonoran Trails Middle School</span>
-              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">Cave Creek Unified PTA</span>
-              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">Arizona Trail Association</span>
-              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">McDowell Mountain Regional Park</span>
+              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">Powerline Promotions</span>
+              <span class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;">FlatTire Bike Shop</span>
+              <a href="https://cavecreekflowerfarm.com/" target="_blank" rel="noopener noreferrer" class="badge badge-muted" style="font-size:0.82rem;padding:0.4rem 0.85rem;text-decoration:none;">CCFF</a>
             </div>
           </div>
         </div>
@@ -223,7 +273,6 @@
             <h2 style="font-size:1.75rem;font-weight:800;margin-bottom:0.5rem;">Become a Sponsor</h2>
             <p style="opacity:0.85;max-width:520px;margin:0 auto 1.5rem;font-size:0.95rem;line-height:1.7;">
               Your sponsorship directly funds student athletes competing in the Arizona Cycling Association.
-              All contributions are tax-deductible through the CCUSD 93 Foundation.
             </p>
             <a href="mailto:cshsmtbteam@gmail.com?subject=Sponsorship%20Inquiry" class="btn btn-primary btn-lg">
               📧 Contact Us About Sponsorship
@@ -236,11 +285,11 @@
             <div style="overflow-x:auto;">
               <table style="width:100%;border-collapse:collapse;font-size:0.88rem;">
                 <thead>
-                  <tr style="background:var(--primary);color:white;">
-                    <th style="padding:0.75rem 1rem;text-align:left;">Benefit</th>
-                    <th style="padding:0.75rem 1rem;text-align:center;">🥉 Bronze<br /><span style="font-weight:400;font-size:0.78rem;">$250+</span></th>
-                    <th style="padding:0.75rem 1rem;text-align:center;">🥈 Silver<br /><span style="font-weight:400;font-size:0.78rem;">$500+</span></th>
-                    <th style="padding:0.75rem 1rem;text-align:center;background:var(--secondary);color:var(--text-dark);">🥇 Gold<br /><span style="font-weight:400;font-size:0.78rem;">$1,000+</span></th>
+                  <tr>
+                    <th style="padding:0.75rem 1rem;text-align:left;background:var(--primary);color:white;">Benefit</th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#B87333;color:white;">🥉 Bronze<br /><span style="font-weight:400;font-size:0.78rem;">$250</span></th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#A8A8A8;color:white;">🥈 Silver<br /><span style="font-weight:400;font-size:0.78rem;">$500</span></th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#C9A800;color:white;">🥇 Gold<br /><span style="font-weight:400;font-size:0.78rem;">$1,000+</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -248,37 +297,31 @@
                     <td style="padding:0.65rem 1rem;font-weight:600;">Website logo &amp; link</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅</td>
                   </tr>
                   <tr style="border-bottom:1px solid var(--border);">
-                    <td style="padding:0.65rem 1rem;font-weight:600;">Jersey logo</td>
+                    <td style="padding:0.65rem 1rem;font-weight:600;">Jersey logo and T-shirt</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">—</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅ (small)</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅ (large)</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅ (large)</td>
                   </tr>
                   <tr style="border-bottom:1px solid var(--border);">
                     <td style="padding:0.65rem 1rem;font-weight:600;">Race day banner</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">—</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">—</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅</td>
                   </tr>
                   <tr style="border-bottom:1px solid var(--border);">
                     <td style="padding:0.65rem 1rem;font-weight:600;">Social media shoutout</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">—</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅ (featured)</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid var(--border);">
-                    <td style="padding:0.65rem 1rem;font-weight:600;">Newsletter mention</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅ (prominent)</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅ (featured)</td>
                   </tr>
                   <tr>
                     <td style="padding:0.65rem 1rem;font-weight:600;">Tax-deductible receipt</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
-                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDF0;">✅</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅</td>
                   </tr>
                 </tbody>
               </table>
@@ -303,7 +346,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>🚵 STMS Mountain Bike Team</h3>
-          <p class="tagline">Sonoran Trails Middle School · CCUSD 93</p>
+          <p class="tagline">Sonoran Trails Middle School · CCUSD 93 · 501(c)(3) Non-Profit</p>
           <p style="font-size:0.82rem;line-height:1.6;">
             Competing in the Arizona Cycling Association and building student-athletes one trail at a time.
           </p>
@@ -336,8 +379,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 STMS Mountain Bike Team. All rights reserved.</span>
-        <span>Powered by ☀️ Arizona sunshine and 🚵 two wheels.</span>
+        <span>© 2026 STMS Mountain Bike Team · All rights reserved.</span>
       </div>
     </div>
   </footer>
