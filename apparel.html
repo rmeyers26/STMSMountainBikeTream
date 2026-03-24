@@ -216,8 +216,6 @@
                       <select id="rider-1-top-qty" name="rider-1-top-qty" class="form-control">
                         <option value="0">0 — Not ordering</option>
                         <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
                       </select>
                     </div>
                   </div>
@@ -248,8 +246,6 @@
                       <select id="rider-1-bib-qty" name="rider-1-bib-qty" class="form-control">
                         <option value="0">0 — Not ordering</option>
                         <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
                       </select>
                     </div>
                   </div>
@@ -280,10 +276,6 @@
                       <select id="rider-1-tshirt-qty" name="rider-1-tshirt-qty" class="form-control">
                         <option value="0">0 — Not ordering</option>
                         <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
                       </select>
                     </div>
                   </div>
@@ -450,11 +442,24 @@
       }
 
       function kitQtyOpts() {
-        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>';
+        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option>';
       }
 
       function tshirtQtyOpts() {
-        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>';
+        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option>';
+      }
+
+      function syncQtyToSize(block, sizeSuffix, qtySuffix) {
+        if (!block) return;
+
+        var sizeField = block.querySelector('select[name$="-' + sizeSuffix + '"]');
+        var qtyField = block.querySelector('select[name$="-' + qtySuffix + '"]');
+
+        if (!sizeField || !qtyField) return;
+
+        if (sizeField.value) {
+          qtyField.value = '1';
+        }
       }
 
       function buildBlock(n) {
@@ -652,8 +657,23 @@
       }
 
       document.getElementById('riders-container').addEventListener('change', function (e) {
-        if (e.target && e.target.name && e.target.name.endsWith('-bib-qty') && parseInt(e.target.value) > 0) {
-          var block = e.target.closest('.rider-block');
+        if (!e.target || !e.target.name) return;
+
+        var block = e.target.closest('.rider-block');
+
+        if (e.target.name.endsWith('-top-size')) {
+          syncQtyToSize(block, 'top-size', 'top-qty');
+        }
+
+        if (e.target.name.endsWith('-bib-size')) {
+          syncQtyToSize(block, 'bib-size', 'bib-qty');
+        }
+
+        if (e.target.name.endsWith('-tshirt-size')) {
+          syncQtyToSize(block, 'tshirt-size', 'tshirt-qty');
+        }
+
+        if (e.target.name.endsWith('-bib-qty') && parseInt(e.target.value, 10) > 0) {
           var topQty = block ? parseInt(block.querySelector('select[name$="-top-qty"]').value) || 0 : 0;
           if (topQty === 0) {
             alert('Reminder: A top (jersey) also needs to be ordered to go with the bibs. Please set a Top Qty and size for this rider.');

@@ -50,6 +50,16 @@ function validatePayload(payload) {
     var bibQty = toInt(rider.bibQty);
     var tshirtQty = toInt(rider.tshirtQty);
 
+    if (topQty < 0 || topQty > 1) {
+      return riderName + ': top quantity must be 0 or 1.';
+    }
+    if (bibQty < 0 || bibQty > 1) {
+      return riderName + ': bib quantity must be 0 or 1.';
+    }
+    if (tshirtQty < 0 || tshirtQty > 1) {
+      return riderName + ': t-shirt quantity must be 0 or 1.';
+    }
+
     if (rider.role === 'rider') {
       if (topQty <= 0) {
         return riderName + ': riders must order at least one top (jersey).';
