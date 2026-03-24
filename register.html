@@ -3,73 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Register your rider for the STMS Mountain Bike Team 2026 season. Arizona Cycling Association middle school team registration." />
+  <meta name="description" content="Register your rider for the STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team 2026 season. Arizona Cycling Association middle school team registration." />
   <meta name="theme-color" content="#1B3D2F" />
-  <title>Rider Registration – STMS Mountain Bike Team</title>
+  <title>Rider Registration – STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚵</text></svg>" />
 </head>
 <body>
-  <!-- News Ticker -->
-  <div class="ticker-bar" role="banner" aria-label="Team announcements">
-    <span class="ticker-label">📢 News</span>
-    <div class="ticker-viewport">
-      <div class="ticker-track">
-        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
-        <span class="ticker-sep">❱</span>
-        <!-- duplicate for seamless loop -->
-        <span class="ticker-item">🏋️ Pre-Season Training — Apr 21, 25, 28 &amp; May 5, 9 &nbsp;·&nbsp; Check <strong>TeamSnap</strong> for times &amp; location</span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">✅ Rider Registration opens <strong>April 1, 2026</strong> — <a href="register.html">Register early!</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">👕 Team Apparel Orders — Submit kit &amp; t-shirt sizes before the deadline! <a href="apparel.html">Order now →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">⚠️ Team Participation Fees Due — <strong>July 9, 2026</strong></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #1 — <strong>Sept 13</strong> · Fort Tuthill County Park, Flagstaff <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #2 — <strong>Sept 26</strong> · Pioneer Park, Prescott, AZ <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #3 — <strong>Oct 11</strong> · Venue TBA <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 Race #4 — <strong>Oct 24</strong> · McDowell Mountain Regional Park, Fountain Hills <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🏆 ACA State Championships — <strong>Nov 7/8, 2026</strong> · Wren Arena, Fort Huachuca <a href="schedule.html">Details →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">⭐ Sponsor opportunities available for 2026! <a href="sponsors.html">Learn More →</a></span>
-        <span class="ticker-sep">❱</span>
-        <span class="ticker-item">🙋 Volunteers needed for Race #1 — <strong>Sept 13</strong> in Flagstaff! <a href="volunteers.html">Sign up →</a></span>
-        <span class="ticker-sep">❱</span>
-      </div>
-    </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar" role="banner">
+    <span>✅ Rider Registration opens <strong>April 1, 2026</strong> — Register early!</span>
+    <button class="announcement-close" id="announcement-close" aria-label="Dismiss announcement">✕</button>
   </div>
+
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-brand">
       <span class="nav-brand-icon" aria-hidden="true">🚵</span>
       <div class="nav-brand-text">
-        STMS Mountain Bike Team
-        <span>Sonoran Trails Middle School</span>
+        Sonoran Trails Middle School (STMS) Mountain Bike Team
+        <span>and associated with Cactus Shadows Mountain Bike Team</span>
       </div>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -93,7 +47,7 @@
       <div class="container">
         <div>
           <h1>✍️ Rider Registration</h1>
-          <p>Sign up for the 2026 STMS Mountain Bike Team season</p>
+          <p>Sign up for the 2026 STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team season</p>
         </div>
       </div>
     </div>
@@ -119,7 +73,7 @@
 
               <div class="info-box warning mb-2" style="margin-bottom:1.5rem;">
                 <div class="info-box-title">📋 Before You Register</div>
-                <p>Students must attend Sonoran Trails Middle School (CCUSD 93) or be homeschooled within the CCUSD 93 district. Homeschool students in the district are welcome to join the team! A parent or guardian must complete this form. All riders also need to register on the <a href="https://arizonacycling.org/" target="_blank" rel="noopener noreferrer">ACA platform</a>.</p>
+                <p>Students must attend STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team. A parent or guardian must complete this form. All riders also need to register on the <a href="https://arizonacycling.org/" target="_blank" rel="noopener noreferrer">ACA platform</a>.</p>
               </div>
 
               <!-- Rider Info -->
@@ -202,7 +156,7 @@
 
               <div class="form-group">
                 <label class="form-label" for="parent-phone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="parent-phone" name="parent-phone" class="form-control" placeholder="(480) 555-0100" required autocomplete="tel" />
+                <input type="tel" id="parent-phone" name="parent-phone" class="form-control" placeholder="(480) 555-0100" required autocomplete="tel" pattern="[\(]?[0-9]{3}[\)\-\s\.}]?[\s]?[0-9]{3}[\-\s\.]?[0-9]{4}" title="Please enter a valid US phone number, e.g. (480) 555-0100" />
               </div>
 
               <div class="form-group">
@@ -226,7 +180,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="emergency-phone">Contact Phone <span class="required">*</span></label>
-                  <input type="tel" id="emergency-phone" name="emergency-phone" class="form-control" placeholder="(480) 555-0100" required />
+                  <input type="tel" id="emergency-phone" name="emergency-phone" class="form-control" placeholder="(480) 555-0100" required pattern="[\(]?[0-9]{3}[\)\-\s\.}]?[\s]?[0-9]{3}[\-\s\.]?[0-9]{4}" title="Please enter a valid US phone number, e.g. (480) 555-0100" />
                 </div>
               </div>
 
@@ -333,31 +287,6 @@
               <p>Team practices are in the evening Tuesday, Thursday and in the morning Saturday. Attending practices is flexible, as schoolwork always comes first. Racing is optional and consists of 4 regular season races and a 5th Championship race, for those that qualify. These are held around the beautiful, diverse state of Arizona.</p>
             </div>
 
-            <div class="info-box info mb-2">
-              <div class="info-box-title">🎁 ACA Member Benefits</div>
-              <a href="https://arizonacycling.org/" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-bottom:0.75rem;">
-                <img src="images/aca-logo.svg" alt="Arizona Cycling Association" style="max-width:200px;width:100%;height:auto;" />
-              </a>
-              <p>Your ACA membership unlocks exclusive discounts and perks from brand partners:</p>
-              <ul style="margin-top:0.5rem;padding-left:1.25rem;line-height:1.9;">
-                <li><strong>Pivot Cycles</strong> – Discounted pricing on bikes for student-athletes and coaches</li>
-                <li><strong>Pactimo</strong> – 25% off custom team apparel + complimentary design sessions</li>
-                <li><strong>ESI Grips</strong> – 30% off silicone grips online</li>
-                <li><strong>Hammer Nutrition</strong> – 40% off fuels &amp; supplements, 15% off apparel</li>
-                <li><strong>Trail Manos</strong> – 25% off gloves (code ACA25) + custom team apparel</li>
-                <li><strong>MTN Biking Life</strong> – 15% off (code ACA15)</li>
-                <li><strong>SCHEELS</strong> – Monthly deals at the Chandler Bike Repair &amp; Service Shop</li>
-                <li><strong>TeamSnap</strong> – Free team management app for all ACA-registered teams</li>
-                <li><strong>USA Cycling</strong> – Points from ACA races + discounted membership for junior riders</li>
-              </ul>
-              <a href="https://arizonacycling.org/member-benefits/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark" style="margin-top:0.75rem;">View All Benefits →</a>
-            </div>
-
-            <div class="info-box danger mb-2">
-              <div class="info-box-title">🚨 Deadline: August 31, 2026</div>
-              <p>Registration closes August 31, 2026 — Register today!</p>
-            </div>
-
             <div class="card mb-2">
               <div class="card-header">
                 <span class="card-header-title">💰 Season Fees</span>
@@ -384,7 +313,7 @@
                   <div class="contact-icon">📧</div>
                   <div class="contact-text">
                     <strong>Email the Team</strong>
-                    <span><a href="mailto:cshsmtbteam@gmail.com">cshsmtbteam@gmail.com</a></span>
+                    <span><a href="mailto:mtbteam@stms.ccusd93.org">mtbteam@stms.ccusd93.org</a></span>
                   </div>
                 </div>
                 <div class="contact-item">
@@ -409,8 +338,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>🚵 STMS Mountain Bike Team</h3>
-          <p class="tagline">Sonoran Trails Middle School · CCUSD 93 · 501(c)(3) Non-Profit</p>
+          <h3>🚵 STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team</h3>
+          <p class="tagline">STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team · CCUSD 93</p>
           <p style="font-size:0.82rem;line-height:1.6;">
             Competing in the Arizona Cycling Association and building student-athletes one trail at a time.
           </p>
@@ -436,14 +365,15 @@
         <div>
           <h4 class="footer-heading">Contact</h4>
           <div class="footer-links">
-            <span style="font-size:0.85rem;">📧 <a href="mailto:cshsmtbteam@gmail.com" style="color:rgba(255,255,255,0.7);">cshsmtbteam@gmail.com</a></span>
-            <span style="font-size:0.85rem;">📍 Sonoran Trails Middle School</span>
+            <span style="font-size:0.85rem;">📧 <a href="mailto:mtbteam@stms.ccusd93.org" style="color:rgba(255,255,255,0.7);">mtbteam@stms.ccusd93.org</a></span>
+            <span style="font-size:0.85rem;">📍 STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team</span>
             <span style="font-size:0.85rem;">Cave Creek, AZ 85331</span>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 STMS Mountain Bike Team · All rights reserved.</span>
+        <span>© 2026 STMS Mountain Bike Team Sonoran Trails Middle School and associated with Cactus Shadows Mountain Bike Team. All rights reserved.</span>
+        <span>Powered by ☀️ Arizona sunshine and 🚵 two wheels.</span>
       </div>
     </div>
   </footer>
