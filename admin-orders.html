@@ -7,6 +7,16 @@
   <meta name="theme-color" content="#1B3D2F" />
   <title>Admin Orders Report - STMS Mountain Bike Team</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    @media print {
+      .navbar, .admin-report-header button, #admin-orders-status { display: none !important; }
+      body { background: #fff !important; }
+      .admin-page .container { padding: 0 !important; }
+      .admin-table-wrap { box-shadow: none !important; border: none !important; }
+      .admin-report-table th, .admin-report-table td { font-size: 8pt !important; padding: 3pt 4pt !important; }
+      .admin-subtotal-row td { background: #eee !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -34,7 +44,10 @@
             <h1 class="section-title" style="margin-bottom:0.35rem;">Apparel Orders</h1>
             <p class="section-subtitle" style="margin-bottom:0;">Latest apparel submissions stored in Supabase.</p>
           </div>
-          <button type="button" id="admin-logout-btn" class="btn btn-outline-dark">Log Out</button>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <button type="button" id="admin-print-btn" class="btn btn-primary">🖨️ Print Report</button>
+            <button type="button" id="admin-logout-btn" class="btn btn-outline-dark">Log Out</button>
+          </div>
         </div>
 
         <p id="admin-orders-status" class="admin-alert admin-alert-info">Loading orders…</p>
@@ -317,6 +330,10 @@
 
       logoutBtn.addEventListener('click', function () {
         forceLogin();
+      });
+
+      document.getElementById('admin-print-btn').addEventListener('click', function () {
+        window.print();
       });
 
       var session = getSession();
