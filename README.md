@@ -10,11 +10,14 @@ A modern, **mobile-first** website for the **Sonoran Trails Middle School Mounta
 | `schedule.html` | 2025 race schedule with dates, locations, maps, and gear requirements |
 | `register.html` | Rider registration form with parent/guardian and emergency contact info |
 | `volunteers.html` | Volunteer opportunities and sign-up form |
+| `apparel.html` | Team apparel order form with rider-by-rider sizing and quantity |
 | `sponsors.html` | Sponsor recognition and sponsorship tier information |
 
 ## Tech Stack
 
-- **Pure HTML5 / CSS3 / Vanilla JavaScript** — no frameworks, no dependencies
+- **Pure HTML5 / CSS3 / Vanilla JavaScript** frontend — no frameworks
+- **Netlify Functions** for server-side form processing
+- **Supabase** table storage for apparel orders
 - **Mobile-first responsive design** — optimized for phones at races and practices
 - Fast load times with no external network requests
 - Accessible markup (ARIA labels, semantic HTML, keyboard navigation)
@@ -27,8 +30,11 @@ STMSMountainBikeTream/
 ├── index.html          # Home
 ├── schedule.html       # Race Schedule
 ├── register.html       # Rider Registration
+├── apparel.html        # Team Apparel Orders
 ├── volunteers.html     # Volunteer Sign-Up
 ├── sponsors.html       # Sponsors
+├── functions/
+│   └── submit-apparel.js # Netlify function -> Supabase insert
 ├── css/
 │   └── styles.css      # Mobile-first stylesheet
 └── js/
@@ -44,6 +50,51 @@ Open `index.html` in any modern web browser. No build step required.
 python3 -m http.server 8080
 # Then visit http://localhost:8080
 ```
+
+## Supabase Setup (Apparel Orders)
+
+Apparel form submissions are sent to `/.netlify/functions/submit-apparel` and written to Supabase.
+
+Create a table in Supabase:
+
+```sql
+create table if not exists public.apparel_orders (
+    id uuid primary key default gen_random_uuid(),
+    created_at timestamptz not null default now(),
+    contact_email text not null,
+    contact_name text not null,
+    rider_count integer not null,
+    source text not null default 'apparel-form',
+    order_payload jsonb not null
+);
+```
+
+Required Netlify environment variables:
+
+- `SUPABASE_URL` = your Supabase project URL
+- `SUPABASE_SERVICE_ROLE_KEY` = your service role key (server-side only)
+- `SUPABASE_APPAREL_TABLE` = optional table override (defaults to `apparel_orders`)
+
+Suggested security settings in Supabase:
+
+```sql
+alter table public.apparel_orders enable row level security;
+
+create policy "No direct client writes"
+on public.apparel_orders
+as restrictive
+for all
+to anon, authenticated
+using (false)
+with check (false);
+```
+
+## Verify Apparel Submission
+
+1. Open the apparel page and complete at least one rider.
+2. Click `Review Order`, then `Confirm & Submit`.
+3. Confirm the success message appears.
+4. Verify one new row exists in `public.apparel_orders` with full `order_payload` JSON.
 
 ## Links
 
