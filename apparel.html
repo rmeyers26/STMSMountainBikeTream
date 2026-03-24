@@ -74,7 +74,7 @@
 
               <div class="info-box info mb-2" style="margin-bottom:1.5rem;">
                 <div class="info-box-title">📋 How This Works</div>
-                <p>Fill out your contact info and select the items you'd like to order. You only need to fill in items you want — leave quantity at 0 for anything you don't need. Our team manager will confirm your order and send payment instructions.</p>
+                <p>Fill out your contact info, then add a block for each rider in your family. Leave quantity at 0 for anything you don't need. Our team manager will confirm the order and send payment instructions.</p>
               </div>
 
               <!-- Contact Info -->
@@ -112,85 +112,109 @@
                 </select>
               </div>
 
-              <!-- Jersey & Bib Kit -->
-              <h2 class="form-section-title">🚴 Jersey &amp; Bib Kit</h2>
+              <!-- Riders -->
+              <h2 class="form-section-title">🚵 Riders</h2>
 
               <div class="info-box info mb-2" style="margin-bottom:1rem;">
-                <p style="margin:0;font-size:0.88rem;">The race kit includes a matching <strong>jersey</strong> and <strong>bib shorts</strong>. Kit sizes run slightly slim — when in doubt, size up. See the sizing guide in the sidebar.</p>
+                <p style="margin:0;font-size:0.88rem;">Add one block per rider. The race kit includes a matching <strong>jersey + bib shorts</strong>. Kit sizes run slim — when in doubt, size up.</p>
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="kit-size">Kit Size</label>
-                  <select id="kit-size" name="kit-size" class="form-control">
-                    <option value="">Select size…</option>
-                    <optgroup label="Youth">
-                      <option value="YXS">Youth XS (YXS)</option>
-                      <option value="YS">Youth S (YS)</option>
-                      <option value="YM">Youth M (YM)</option>
-                      <option value="YL">Youth L (YL)</option>
-                    </optgroup>
-                    <optgroup label="Adult">
-                      <option value="XS">XS</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="kit-qty">Quantity</label>
-                  <select id="kit-qty" name="kit-qty" class="form-control">
-                    <option value="0">0 — Not ordering</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </div>
-              </div>
+              <div id="riders-container">
 
-              <!-- T-Shirt -->
-              <h2 class="form-section-title">👕 Team T-Shirt</h2>
+                <!-- Rider 1 (static – required for Netlify form field discovery) -->
+                <div class="rider-block" id="rider-block-1" style="background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                    <strong style="color:var(--primary);">Rider 1</strong>
+                    <button type="button" id="remove-rider-1" onclick="removeRider(1)" style="display:none;font-size:0.8rem;padding:0.2rem 0.7rem;background:transparent;border:1px solid var(--border);border-radius:var(--radius);color:var(--text-medium);cursor:pointer;">✕ Remove</button>
+                  </div>
 
-              <div class="info-box info mb-2" style="margin-bottom:1rem;">
-                <p style="margin:0;font-size:0.88rem;">The team t-shirt is a casual cotton tee with the STMS MTB logo. Sizes run true to standard US sizing.</p>
-              </div>
+                  <div class="form-group">
+                    <label class="form-label" for="rider-1-name">Rider Name <span class="required">*</span></label>
+                    <input type="text" id="rider-1-name" name="rider-1-name" class="form-control" placeholder="First and last name" required autocomplete="off" />
+                  </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="tshirt-size">T-Shirt Size</label>
-                  <select id="tshirt-size" name="tshirt-size" class="form-control">
-                    <option value="">Select size…</option>
-                    <optgroup label="Youth">
-                      <option value="YXS">Youth XS (YXS)</option>
-                      <option value="YS">Youth S (YS)</option>
-                      <option value="YM">Youth M (YM)</option>
-                      <option value="YL">Youth L (YL)</option>
-                    </optgroup>
-                    <optgroup label="Adult">
-                      <option value="XS">XS</option>
-                      <option value="S">S</option>
-                      <option value="M">M</option>
-                      <option value="L">L</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
-                    </optgroup>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="tshirt-qty">Quantity</label>
-                  <select id="tshirt-qty" name="tshirt-qty" class="form-control">
-                    <option value="0">0 — Not ordering</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
-                </div>
-              </div>
+                  <div class="form-group">
+                    <label class="form-label">Team <span class="required">*</span></label>
+                    <div style="display:flex;gap:1.75rem;margin-top:0.35rem;">
+                      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;font-weight:600;">
+                        <input type="radio" name="rider-1-team" value="STMS" required /> STMS
+                      </label>
+                      <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;font-weight:600;">
+                        <input type="radio" name="rider-1-team" value="CSMTB" /> CSMTB
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="rider-1-kit-size">Kit Size</label>
+                      <select id="rider-1-kit-size" name="rider-1-kit-size" class="form-control">
+                        <option value="">Select size…</option>
+                        <optgroup label="Youth">
+                          <option value="YXS">Youth XS (YXS)</option>
+                          <option value="YS">Youth S (YS)</option>
+                          <option value="YM">Youth M (YM)</option>
+                          <option value="YL">Youth L (YL)</option>
+                        </optgroup>
+                        <optgroup label="Adult">
+                          <option value="XS">XS</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                          <option value="XXL">XXL</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="rider-1-kit-qty">Kit Qty</label>
+                      <select id="rider-1-kit-qty" name="rider-1-kit-qty" class="form-control">
+                        <option value="0">0 — Not ordering</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label" for="rider-1-tshirt-size">T-Shirt Size</label>
+                      <select id="rider-1-tshirt-size" name="rider-1-tshirt-size" class="form-control">
+                        <option value="">Select size…</option>
+                        <optgroup label="Youth">
+                          <option value="YXS">Youth XS (YXS)</option>
+                          <option value="YS">Youth S (YS)</option>
+                          <option value="YM">Youth M (YM)</option>
+                          <option value="YL">Youth L (YL)</option>
+                        </optgroup>
+                        <optgroup label="Adult">
+                          <option value="XS">XS</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                          <option value="XXL">XXL</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="rider-1-tshirt-qty">T-Shirt Qty</label>
+                      <select id="rider-1-tshirt-qty" name="rider-1-tshirt-qty" class="form-control">
+                        <option value="0">0 — Not ordering</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!-- /rider-block-1 -->
+
+              </div><!-- /riders-container -->
+
+              <button type="button" id="add-rider-btn" style="width:100%;margin-bottom:1.5rem;padding:0.65rem;background:transparent;border:2px dashed var(--border);border-radius:var(--radius);color:var(--primary);font-weight:600;font-size:0.9rem;cursor:pointer;">+ Add Another Rider</button>
 
               <!-- Special Notes -->
               <h2 class="form-section-title">📝 Special Notes</h2>
@@ -325,32 +349,146 @@
 
   <script src="js/main.js"></script>
   <script>
-    // Validate that at least one item is being ordered before submit
-    document.getElementById('apparel-form').addEventListener('submit', function(e) {
-      const kitQty = parseInt(document.getElementById('kit-qty').value) || 0;
-      const tshirtQty = parseInt(document.getElementById('tshirt-qty').value) || 0;
+    (function () {
+      var riderCount = 1;
 
-      if (kitQty === 0 && tshirtQty === 0) {
-        e.preventDefault();
-        alert('Please select at least one item to order (quantity greater than 0).');
-        return;
+      function sizeOpts() {
+        return '<option value="">Select size\u2026</option>' +
+          '<optgroup label="Youth">' +
+            '<option value="YXS">Youth XS (YXS)</option>' +
+            '<option value="YS">Youth S (YS)</option>' +
+            '<option value="YM">Youth M (YM)</option>' +
+            '<option value="YL">Youth L (YL)</option>' +
+          '</optgroup>' +
+          '<optgroup label="Adult">' +
+            '<option value="XS">XS</option>' +
+            '<option value="S">S</option>' +
+            '<option value="M">M</option>' +
+            '<option value="L">L</option>' +
+            '<option value="XL">XL</option>' +
+            '<option value="XXL">XXL</option>' +
+          '</optgroup>';
       }
 
-      // Require size selection if quantity > 0
-      if (kitQty > 0 && !document.getElementById('kit-size').value) {
-        e.preventDefault();
-        alert('Please select a size for the Jersey & Bib Kit.');
-        document.getElementById('kit-size').focus();
-        return;
+      function kitQtyOpts() {
+        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>';
       }
 
-      if (tshirtQty > 0 && !document.getElementById('tshirt-size').value) {
-        e.preventDefault();
-        alert('Please select a size for the Team T-Shirt.');
-        document.getElementById('tshirt-size').focus();
-        return;
+      function tshirtQtyOpts() {
+        return '<option value="0">0 \u2014 Not ordering</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>';
       }
-    });
+
+      function buildBlock(n) {
+        return '<div class="rider-block" id="rider-block-' + n + '" style="background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">' +
+            '<strong style="color:var(--primary);">Rider ' + n + '</strong>' +
+            '<button type="button" onclick="removeRider(' + n + ')" style="font-size:0.8rem;padding:0.2rem 0.7rem;background:transparent;border:1px solid var(--border);border-radius:var(--radius);color:var(--text-medium);cursor:pointer;">\u2715 Remove</button>' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label class="form-label" for="rider-' + n + '-name">Rider Name <span class="required">*</span></label>' +
+            '<input type="text" id="rider-' + n + '-name" name="rider-' + n + '-name" class="form-control" placeholder="First and last name" required autocomplete="off" />' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label class="form-label">Team <span class="required">*</span></label>' +
+            '<div style="display:flex;gap:1.75rem;margin-top:0.35rem;">' +
+              '<label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;font-weight:600;">' +
+                '<input type="radio" name="rider-' + n + '-team" value="STMS" required /> STMS' +
+              '</label>' +
+              '<label style="display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;cursor:pointer;font-weight:600;">' +
+                '<input type="radio" name="rider-' + n + '-team" value="CSMTB" /> CSMTB' +
+              '</label>' +
+            '</div>' +
+          '</div>' +
+          '<div class="form-row">' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="rider-' + n + '-kit-size">Kit Size</label>' +
+              '<select id="rider-' + n + '-kit-size" name="rider-' + n + '-kit-size" class="form-control">' + sizeOpts() + '</select>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="rider-' + n + '-kit-qty">Kit Qty</label>' +
+              '<select id="rider-' + n + '-kit-qty" name="rider-' + n + '-kit-qty" class="form-control">' + kitQtyOpts() + '</select>' +
+            '</div>' +
+          '</div>' +
+          '<div class="form-row">' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="rider-' + n + '-tshirt-size">T-Shirt Size</label>' +
+              '<select id="rider-' + n + '-tshirt-size" name="rider-' + n + '-tshirt-size" class="form-control">' + sizeOpts() + '</select>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="rider-' + n + '-tshirt-qty">T-Shirt Qty</label>' +
+              '<select id="rider-' + n + '-tshirt-qty" name="rider-' + n + '-tshirt-qty" class="form-control">' + tshirtQtyOpts() + '</select>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }
+
+      function updateRemoveButtons() {
+        var blocks = document.querySelectorAll('.rider-block');
+        blocks.forEach(function (block) {
+          var btn = block.querySelector('button[onclick^="removeRider"]');
+          if (btn) btn.style.display = blocks.length > 1 ? '' : 'none';
+        });
+      }
+
+      window.removeRider = function (n) {
+        var block = document.getElementById('rider-block-' + n);
+        if (block) block.remove();
+        updateRemoveButtons();
+      };
+
+      document.getElementById('add-rider-btn').addEventListener('click', function () {
+        riderCount++;
+        var container = document.getElementById('riders-container');
+        var div = document.createElement('div');
+        div.innerHTML = buildBlock(riderCount);
+        container.appendChild(div.firstElementChild);
+        updateRemoveButtons();
+      });
+
+      updateRemoveButtons();
+
+      // Form validation
+      document.getElementById('apparel-form').addEventListener('submit', function (e) {
+        var blocks = document.querySelectorAll('.rider-block');
+        var hasOrder = false;
+
+        for (var i = 0; i < blocks.length; i++) {
+          var block = blocks[i];
+          var nameField = block.querySelector('input[name$="-name"]');
+          var teamChecked = block.querySelector('input[name$="-team"]:checked');
+          var kitQty = parseInt(block.querySelector('select[name$="-kit-qty"]').value) || 0;
+          var tshirtQty = parseInt(block.querySelector('select[name$="-tshirt-qty"]').value) || 0;
+
+          if (!nameField.value.trim()) {
+            e.preventDefault();
+            alert('Please enter a name for every rider.');
+            nameField.focus();
+            return;
+          }
+          if (!teamChecked) {
+            e.preventDefault();
+            alert('Please select a team (STMS or CSMTB) for ' + (nameField.value.trim() || 'each rider') + '.');
+            return;
+          }
+          if (kitQty > 0 && !block.querySelector('select[name$="-kit-size"]').value) {
+            e.preventDefault();
+            alert('Please select a kit size for ' + nameField.value.trim() + '.');
+            return;
+          }
+          if (tshirtQty > 0 && !block.querySelector('select[name$="-tshirt-size"]').value) {
+            e.preventDefault();
+            alert('Please select a t-shirt size for ' + nameField.value.trim() + '.');
+            return;
+          }
+          if (kitQty > 0 || tshirtQty > 0) hasOrder = true;
+        }
+
+        if (!hasOrder) {
+          e.preventDefault();
+          alert('Please order at least one item (kit or t-shirt) across all riders.');
+        }
+      });
+    })();
   </script>
 </body>
 </html>
