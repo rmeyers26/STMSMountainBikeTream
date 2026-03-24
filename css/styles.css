@@ -701,6 +701,7 @@ ul {
 .announcement-content .tag.tag-practice { background: var(--primary-light); color: white; }
 .announcement-content .tag.tag-info { background: var(--primary); color: white; }
 .announcement-content .tag.tag-volunteer { background: #6C5CE7; color: white; }
+.announcement-content .tag.tag-warning { background: #e67e22; color: white; }
 
 .announcement-content h4 {
   font-size: 0.95rem;
