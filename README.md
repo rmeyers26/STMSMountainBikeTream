@@ -116,7 +116,7 @@ Admin pages:
 Security model:
 
 - The browser never receives the Supabase service-role key.
-- Login issues a short-lived signed token.
+- Login issues a short-lived signed token that expires after 30 minutes.
 - The report function verifies that token before querying Supabase.
 - Logging out clears the client session token.
 

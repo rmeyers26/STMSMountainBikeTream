@@ -3,7 +3,7 @@ const { jsonResponse, signToken } = require('./admin-auth-utils');
 
 const PASSCODE = process.env.ADMIN_REPORT_PASSCODE || '';
 const TOKEN_SECRET = process.env.ADMIN_REPORT_TOKEN_SECRET || '';
-const TOKEN_TTL_MS = 8 * 60 * 60 * 1000;
+const TOKEN_TTL_MS = 30 * 60 * 1000;
 
 function hasValidSecrets() {
   return Boolean(PASSCODE && TOKEN_SECRET);

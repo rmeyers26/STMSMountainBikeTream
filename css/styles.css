@@ -1118,28 +1118,36 @@ textarea.form-control {
   gap: 1rem;
 }
 
+.admin-page .container {
+  max-width: 100%;
+  padding: 0 1.5rem;
+}
+
 .admin-table-wrap {
   overflow-x: auto;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  width: 100%;
 }
 
 .admin-report-table {
   width: 100%;
-  min-width: 1450px;
   border-collapse: collapse;
   background: var(--bg-card);
+  table-layout: fixed;
 }
 
 .admin-report-table th,
 .admin-report-table td {
-  padding: 0.8rem 0.9rem;
+  padding: 0.45rem 0.55rem;
   border-bottom: 1px solid var(--border);
   text-align: left;
   vertical-align: top;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .admin-report-table th {
@@ -1147,8 +1155,8 @@ textarea.form-control {
   top: 0;
   background: #edf3ef;
   color: var(--primary-dark);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -1159,6 +1167,13 @@ textarea.form-control {
 
 .admin-report-table tbody tr:hover {
   background: #f3f8f4;
+}
+
+.admin-subtotal-row td {
+  background: #edf3ef;
+  border-top: 2px solid var(--primary-light);
+  font-size: 0.82rem;
+  padding: 0.6rem 0.55rem;
 }
 
 .admin-order-card {

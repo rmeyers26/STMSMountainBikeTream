@@ -54,6 +54,7 @@
   <script>
     (function () {
       var storageKey = 'stmsAdminSession';
+      var autoLogoutTimer = null;
       var statusEl = document.getElementById('admin-orders-status');
       var listEl = document.getElementById('admin-orders-list');
       var emptyEl = document.getElementById('admin-orders-empty');
@@ -94,8 +95,26 @@
       }
 
       function forceLogin() {
+        if (autoLogoutTimer) {
+          clearTimeout(autoLogoutTimer);
+          autoLogoutTimer = null;
+        }
         sessionStorage.removeItem(storageKey);
         window.location.replace('admin-login.html');
+      }
+
+      function scheduleAutoLogout(session) {
+        if (!session || !session.expiresAt) return;
+
+        var remainingMs = session.expiresAt - Date.now();
+        if (remainingMs <= 0) {
+          forceLogin();
+          return;
+        }
+
+        autoLogoutTimer = window.setTimeout(function () {
+          forceLogin();
+        }, remainingMs);
       }
 
       function escapeHtml(value) {
@@ -112,34 +131,98 @@
         return fields[key] == null ? '' : String(fields[key]);
       }
 
-      function getFirstRider(order) {
-        var payload = order.order_payload || {};
-        var riders = Array.isArray(payload.riders) ? payload.riders : [];
-        return riders.length ? riders[0] : {};
+      function getRiderFieldNumbers(fields) {
+        if (!fields || typeof fields !== 'object') return [];
+
+        var riderMap = {};
+        Object.keys(fields).forEach(function (key) {
+          var match = key.match(/^rider-(\d+)-/);
+          if (match) {
+            riderMap[match[1]] = true;
+          }
+        });
+
+        return Object.keys(riderMap)
+          .map(function (value) { return parseInt(value, 10); })
+          .filter(function (value) { return !Number.isNaN(value); })
+          .sort(function (left, right) { return left - right; });
       }
 
-      function getDisplayRow(order) {
+      function buildRiderFromFields(fields, riderNumber) {
+        var prefix = 'rider-' + riderNumber + '-';
+        return {
+          riderNumber: riderNumber,
+          name: getFieldValue(fields, prefix + 'name'),
+          role: getFieldValue(fields, prefix + 'role'),
+          team: getFieldValue(fields, prefix + 'team'),
+          topQty: getFieldValue(fields, prefix + 'top-qty'),
+          topSize: getFieldValue(fields, prefix + 'top-size'),
+          bibQty: getFieldValue(fields, prefix + 'bib-qty'),
+          bibSize: getFieldValue(fields, prefix + 'bib-size'),
+          tshirtQty: getFieldValue(fields, prefix + 'tshirt-qty'),
+          tshirtSize: getFieldValue(fields, prefix + 'tshirt-size')
+        };
+      }
+
+      function getRidersForOrder(order) {
+        var payload = order.order_payload || {};
+        var fields = payload.fields || {};
+        var riders = Array.isArray(payload.riders) ? payload.riders : [];
+        var riderNumbers = getRiderFieldNumbers(fields);
+
+        if (riders.length) {
+          return riders.map(function (rider, index) {
+            var riderNumber = rider && rider.riderNumber ? rider.riderNumber : index + 1;
+            var fromFields = buildRiderFromFields(fields, riderNumber);
+            return {
+              riderNumber: riderNumber,
+              name: fromFields.name || rider.name || '',
+              role: fromFields.role || rider.role || '',
+              team: fromFields.team || rider.team || '',
+              topQty: fromFields.topQty || (rider.topQty != null ? String(rider.topQty) : ''),
+              topSize: fromFields.topSize || rider.topSize || '',
+              bibQty: fromFields.bibQty || (rider.bibQty != null ? String(rider.bibQty) : ''),
+              bibSize: fromFields.bibSize || rider.bibSize || '',
+              tshirtQty: fromFields.tshirtQty || (rider.tshirtQty != null ? String(rider.tshirtQty) : ''),
+              tshirtSize: fromFields.tshirtSize || rider.tshirtSize || ''
+            };
+          });
+        }
+
+        if (riderNumbers.length) {
+          return riderNumbers.map(function (riderNumber) {
+            return buildRiderFromFields(fields, riderNumber);
+          });
+        }
+
+        return [buildRiderFromFields(fields, 1)];
+      }
+
+      function getDisplayRows(order) {
         var payload = order.order_payload || {};
         var fields = payload.fields || {};
         var contact = payload.contact || {};
-        var firstRider = getFirstRider(order);
+        var riders = getRidersForOrder(order);
 
-        return {
-          submittedAt: formatDate(order.created_at),
-          firstName: getFieldValue(fields, 'first-name') || contact.firstName || '',
-          lastName: getFieldValue(fields, 'last-name') || contact.lastName || '',
-          email: getFieldValue(fields, 'email') || order.contact_email || contact.email || '',
-          phone: getFieldValue(fields, 'phone') || contact.phone || '',
-          riderName: getFieldValue(fields, 'rider-1-name') || firstRider.name || '',
-          riderRole: getFieldValue(fields, 'rider-1-role') || firstRider.role || '',
-          riderTeam: getFieldValue(fields, 'rider-1-team') || firstRider.team || '',
-          topQty: getFieldValue(fields, 'rider-1-top-qty') || (firstRider.topQty != null ? String(firstRider.topQty) : ''),
-          topSize: getFieldValue(fields, 'rider-1-top-size') || firstRider.topSize || '',
-          bibQty: getFieldValue(fields, 'rider-1-bib-qty') || (firstRider.bibQty != null ? String(firstRider.bibQty) : ''),
-          bibSize: getFieldValue(fields, 'rider-1-bib-size') || firstRider.bibSize || '',
-          tshirtQty: getFieldValue(fields, 'rider-1-tshirt-qty') || (firstRider.tshirtQty != null ? String(firstRider.tshirtQty) : ''),
-          tshirtSize: getFieldValue(fields, 'rider-1-tshirt-size') || firstRider.tshirtSize || ''
-        };
+        return riders.map(function (rider) {
+          return {
+            submittedAt: formatDate(order.created_at),
+            firstName: getFieldValue(fields, 'first-name') || contact.firstName || '',
+            lastName: getFieldValue(fields, 'last-name') || contact.lastName || '',
+            email: getFieldValue(fields, 'email') || order.contact_email || contact.email || '',
+            phone: getFieldValue(fields, 'phone') || contact.phone || '',
+            riderNumber: rider.riderNumber || '',
+            riderName: rider.name || '',
+            riderRole: rider.role || '',
+            riderTeam: rider.team || '',
+            topQty: rider.topQty || '',
+            topSize: rider.topSize || '',
+            bibQty: rider.bibQty || '',
+            bibSize: rider.bibSize || '',
+            tshirtQty: rider.tshirtQty || '',
+            tshirtSize: rider.tshirtSize || ''
+          };
+        });
       }
 
       function renderOrders(orders) {
@@ -150,8 +233,33 @@
         }
 
         emptyEl.style.display = 'none';
+        var rows = orders.flatMap(function (order) {
+          return getDisplayRows(order);
+        });
+
+        var totalTopQty = rows.reduce(function (sum, r) { return sum + (parseInt(r.topQty, 10) || 0); }, 0);
+        var totalBibQty = rows.reduce(function (sum, r) { return sum + (parseInt(r.bibQty, 10) || 0); }, 0);
+        var totalTeeQty = rows.reduce(function (sum, r) { return sum + (parseInt(r.tshirtQty, 10) || 0); }, 0);
+
         listEl.innerHTML = '<div class="admin-table-wrap">' +
           '<table class="admin-report-table">' +
+            '<colgroup>' +
+              '<col style="width:8%"/>' +
+              '<col style="width:6%"/>' +
+              '<col style="width:6%"/>' +
+              '<col style="width:13%"/>' +
+              '<col style="width:7%"/>' +
+              '<col style="width:4%"/>' +
+              '<col style="width:8%"/>' +
+              '<col style="width:6%"/>' +
+              '<col style="width:7%"/>' +
+              '<col style="width:5%"/>' +
+              '<col style="width:5%"/>' +
+              '<col style="width:5%"/>' +
+              '<col style="width:5%"/>' +
+              '<col style="width:5%"/>' +
+              '<col style="width:5%"/>' +
+            '</colgroup>' +
             '<thead>' +
               '<tr>' +
                 '<th>Submitted</th>' +
@@ -159,6 +267,7 @@
                 '<th>Last Name</th>' +
                 '<th>Email</th>' +
                 '<th>Phone</th>' +
+                '<th>#</th>' +
                 '<th>Rider Name</th>' +
                 '<th>Role</th>' +
                 '<th>Team</th>' +
@@ -166,19 +275,19 @@
                 '<th>Top Size</th>' +
                 '<th>Bib Qty</th>' +
                 '<th>Bib Size</th>' +
-                '<th>T-Shirt Qty</th>' +
-                '<th>T-Shirt Size</th>' +
+                '<th>Tee Qty</th>' +
+                '<th>Tee Size</th>' +
               '</tr>' +
             '</thead>' +
             '<tbody>' +
-              orders.map(function (order) {
-                var row = getDisplayRow(order);
+              rows.map(function (row) {
                 return '<tr>' +
                   '<td>' + escapeHtml(row.submittedAt) + '</td>' +
                   '<td>' + escapeHtml(row.firstName) + '</td>' +
                   '<td>' + escapeHtml(row.lastName) + '</td>' +
                   '<td>' + escapeHtml(row.email) + '</td>' +
                   '<td>' + escapeHtml(row.phone) + '</td>' +
+                  '<td>' + escapeHtml(row.riderNumber) + '</td>' +
                   '<td>' + escapeHtml(row.riderName) + '</td>' +
                   '<td>' + escapeHtml(row.riderRole) + '</td>' +
                   '<td>' + escapeHtml(row.riderTeam) + '</td>' +
@@ -191,6 +300,17 @@
                 '</tr>';
               }).join('') +
             '</tbody>' +
+            '<tfoot>' +
+              '<tr class="admin-subtotal-row">' +
+                '<td colspan="9" style="text-align:right;font-weight:600;">Subtotals:</td>' +
+                '<td><strong>' + totalTopQty + '</strong></td>' +
+                '<td></td>' +
+                '<td><strong>' + totalBibQty + '</strong></td>' +
+                '<td></td>' +
+                '<td><strong>' + totalTeeQty + '</strong></td>' +
+                '<td></td>' +
+              '</tr>' +
+            '</tfoot>' +
           '</table>' +
         '</div>';
       }
@@ -204,6 +324,8 @@
         forceLogin();
         return;
       }
+
+      scheduleAutoLogout(session);
 
       fetch('/.netlify/functions/admin-orders', {
         headers: {
