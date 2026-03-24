@@ -1,6 +1,8 @@
 const { createClient } = require('@supabase/supabase-js');
 
 const TABLE_NAME = process.env.SUPABASE_APPAREL_TABLE || 'apparel_orders';
+const SUPABASE_URL = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY;
 
 function jsonResponse(statusCode, body) {
   return {
@@ -76,8 +78,12 @@ exports.handler = async function (event) {
     return jsonResponse(405, { ok: false, error: 'Method not allowed.' });
   }
 
-  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    return jsonResponse(500, { ok: false, error: 'Supabase environment variables are not configured.' });
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+    return jsonResponse(500, {
+      ok: false,
+      error: 'Supabase environment variables are not configured.',
+      hint: 'Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in Netlify site environment variables, then redeploy.'
+    });
   }
 
   var payload;
@@ -103,15 +109,35 @@ exports.handler = async function (event) {
     order_payload: payload
   };
 
-  var supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
+  var supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false }
   });
 
-  var result = await supabase.from(TABLE_NAME).insert(row).select('id').single();
+  var result;
+  try {
+    result = await supabase.from(TABLE_NAME).insert(row).select('id').single();
+  } catch (error) {
+    console.error('submit-apparel unexpected insert exception:', error && error.message ? error.message : error);
+    return jsonResponse(500, {
+      ok: false,
+      error: 'Unexpected Supabase error while saving the order.',
+      hint: 'Check Netlify function logs for submit-apparel.'
+    });
+  }
 
   if (result.error) {
-    console.error('submit-apparel insert failed:', result.error.message);
-    return jsonResponse(500, { ok: false, error: 'Unable to save order right now. Please try again.' });
+    console.error('submit-apparel insert failed:', {
+      message: result.error.message,
+      code: result.error.code,
+      details: result.error.details,
+      hint: result.error.hint,
+      table: TABLE_NAME
+    });
+    return jsonResponse(500, {
+      ok: false,
+      error: 'Unable to save order right now. Please try again.',
+      hint: 'Verify table exists, service role key is correct, and Netlify env vars are set on Production context.'
+    });
   }
 
   return jsonResponse(200, {
