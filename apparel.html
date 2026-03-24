@@ -102,16 +102,6 @@
                 <input type="tel" id="phone" name="phone" class="form-control" placeholder="(480) 555-0100" autocomplete="tel" />
               </div>
 
-              <div class="form-group">
-                <label class="form-label" for="role">Ordering For <span class="required">*</span></label>
-                <select id="role" name="role" class="form-control" required>
-                  <option value="">Select…</option>
-                  <option value="rider">Rider</option>
-                  <option value="coach">Coach / Volunteer</option>
-                  <option value="parent">Parent / Family Member</option>
-                </select>
-              </div>
-
               <!-- Riders -->
               <h2 class="form-section-title">🚵 Riders</h2>
 
@@ -131,6 +121,16 @@
                   <div class="form-group">
                     <label class="form-label" for="rider-1-name">Rider Name <span class="required">*</span></label>
                     <input type="text" id="rider-1-name" name="rider-1-name" class="form-control" placeholder="First and last name" required autocomplete="off" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="rider-1-role">Ordering For <span class="required">*</span></label>
+                    <select id="rider-1-role" name="rider-1-role" class="form-control" required>
+                      <option value="">Select…</option>
+                      <option value="rider">Rider</option>
+                      <option value="coach">Coach / Volunteer</option>
+                      <option value="parent">Parent / Family Member</option>
+                    </select>
                   </div>
 
                   <div class="form-group">
@@ -379,6 +379,15 @@
           '<div class="form-group">' +
             '<label class="form-label" for="rider-' + n + '-name">Rider Name <span class="required">*</span></label>' +
             '<input type="text" id="rider-' + n + '-name" name="rider-' + n + '-name" class="form-control" placeholder="First and last name" required autocomplete="off" />' +
+          '</div>' +
+          '<div class="form-group">' +
+            '<label class="form-label" for="rider-' + n + '-role">Ordering For <span class="required">*</span></label>' +
+            '<select id="rider-' + n + '-role" name="rider-' + n + '-role" class="form-control" required>' +
+              '<option value="">Select\u2026</option>' +
+              '<option value="rider">Rider</option>' +
+              '<option value="coach">Coach / Volunteer</option>' +
+              '<option value="parent">Parent / Family Member</option>' +
+            '</select>' +
           '</div>' +
           '<div class="form-group">' +
             '<label class="form-label">Team <span class="required">*</span></label>' +
