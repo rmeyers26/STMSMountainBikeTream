@@ -99,7 +99,7 @@
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
         }
-        alert('There was a problem submitting the form. Please try again or email us directly.');
+        alert('There was a problem submitting the form. Please try again or email coach@stingersmtb.com directly.');
       });
   }
 
