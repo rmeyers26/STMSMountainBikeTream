@@ -78,11 +78,12 @@
     </button>
     <ul class="nav-menu" id="nav-menu" role="list">
       <li><a href="index.html"><span class="nav-icon" aria-hidden="true">🏠</span>Home</a></li>
-      <li><a href="schedule.html"><span class="nav-icon" aria-hidden="true">📅</span>Schedule</a></li>
+      <li><a href="schedule.html"><span class="nav-icon" aria-hidden="true">📅</span>Race Schedule</a></li>
       <li><a href="register.html"><span class="nav-icon" aria-hidden="true">✍️</span>Register</a></li>
       <li><a href="volunteers.html"><span class="nav-icon" aria-hidden="true">🙋</span>Volunteer</a></li>
       <li><a href="apparel.html"><span class="nav-icon" aria-hidden="true">👕</span>Apparel</a></li>
       <li><a href="sponsors.html" class="active"><span class="nav-icon" aria-hidden="true">⭐</span>Sponsors</a></li>
+      <li><a href="admin-login.html"><span class="nav-icon" aria-hidden="true">🔐</span>Admin</a></li>
       <li><a href="quickstart.html"><span class="nav-icon" aria-hidden="true">🚀</span>Quick Start</a></li>
     </ul>
   </nav>
@@ -178,9 +179,9 @@
                 <thead>
                   <tr>
                     <th style="padding:0.75rem 1rem;text-align:left;background:var(--primary);color:white;">Benefit</th>
-                    <th style="padding:0.75rem 1rem;text-align:center;background:#B87333;color:white;">🥉 Bronze<br /><span style="font-weight:400;font-size:0.78rem;">$250</span></th>
-                    <th style="padding:0.75rem 1rem;text-align:center;background:#A8A8A8;color:white;">🥈 Silver<br /><span style="font-weight:400;font-size:0.78rem;">$500</span></th>
-                    <th style="padding:0.75rem 1rem;text-align:center;background:#C9A800;color:white;">🥇 Gold<br /><span style="font-weight:400;font-size:0.78rem;">$1,000+</span></th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#B87333;color:white;">🥉 Bronze (Base Tier)<br /><span style="font-weight:400;font-size:0.78rem;">$250</span></th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#A8A8A8;color:white;">🥈 Silver (Top Tier)<br /><span style="font-weight:400;font-size:0.78rem;">$500</span></th>
+                    <th style="padding:0.75rem 1rem;text-align:center;background:#C9A800;color:white;">🥇 Gold (Title Tier)<br /><span style="font-weight:400;font-size:0.78rem;">$1,000+</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -191,8 +192,14 @@
                     <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅</td>
                   </tr>
                   <tr style="border-bottom:1px solid var(--border);">
-                    <td style="padding:0.65rem 1rem;font-weight:600;">Jersey logo and T-shirt</td>
+                    <td style="padding:0.65rem 1rem;font-weight:600;">Prominent spot on website</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">—</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">—</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:0.65rem 1rem;font-weight:600;">Jersey logo and T-shirt</td>
+                    <td style="padding:0.65rem 1rem;text-align:center;">✅</td>
                     <td style="padding:0.65rem 1rem;text-align:center;">✅ (small)</td>
                     <td style="padding:0.65rem 1rem;text-align:center;background:#FFFDE0;">✅ (large)</td>
                   </tr>
@@ -280,11 +287,11 @@
           </div>
         </div>
 
-        <!-- Gold Sponsors — $1,000+ -->
+        <!-- Gold Title Tier Sponsors — $1,000+ -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥇</span>
-            Gold Sponsors — $1,000+
+            Gold Title Tier Sponsors — $1,000+
           </div>
           <div class="sponsor-grid tier-gold">
             <div class="sponsor-card gold">
@@ -301,18 +308,18 @@
             </div>
             <div class="sponsor-card gold" style="border-style:dashed;background:var(--bg-light);box-shadow:none;opacity:0.6;">
               <div class="sponsor-logo-placeholder" style="border-color:#FFD700;color:#B8860B;">+ Your Business</div>
-              <h4 style="color:var(--text-medium);">Gold Sponsor Spot Available</h4>
-              <p>Join our top-tier sponsors and get maximum visibility</p>
+              <h4 style="color:var(--text-medium);">Gold Title Tier Sponsor Spot Available</h4>
+              <p>Join our title-tier sponsors and get maximum visibility</p>
               <a href="#become-sponsor" class="btn btn-sm btn-primary">Claim Spot</a>
             </div>
           </div>
         </div>
 
-        <!-- Silver Sponsors — $500 -->
+        <!-- Silver Top Tier Sponsors — $500 -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥈</span>
-            Silver Sponsors — $500
+            Silver Top Tier Sponsors — $500
           </div>
           <div class="sponsor-grid tier-silver">
             <div class="sponsor-card silver">
@@ -327,18 +334,18 @@
             </div>
             <div class="sponsor-card silver" style="border-style:dashed;background:var(--bg-light);box-shadow:none;opacity:0.6;">
               <div class="sponsor-logo-placeholder" style="border-color:#C0C0C0;color:#888;">+ Your Business</div>
-              <h4 style="color:var(--text-medium);">Silver Sponsor Available</h4>
+              <h4 style="color:var(--text-medium);">Silver Top Tier Sponsor Available</h4>
               <p>Great visibility at local and regional races</p>
               <a href="#become-sponsor" class="btn btn-sm btn-outline-dark">Learn More</a>
             </div>
           </div>
         </div>
 
-        <!-- Bronze Sponsors — $250 -->
+        <!-- Bronze Base Tier Sponsors — $250 -->
         <div class="sponsor-tier">
           <div class="sponsor-tier-title">
             <span class="tier-icon">🥉</span>
-            Bronze Sponsors — $250
+            Bronze Base Tier Sponsors — $250
           </div>
           <div class="sponsor-grid tier-bronze">
             <div class="sponsor-card bronze">
