@@ -1880,6 +1880,15 @@ textarea.form-control {
   line-height: 1.5;
 }
 
+.venmo-pay-link {
+  margin: 0.2rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.venmo-pay-link:hover {
+  transform: translateY(-1px);
+}
+
 /* =============================================
    UTILITY CLASSES
    ============================================= */
