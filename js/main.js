@@ -178,6 +178,19 @@
   }
 
   /* --------------------------------------------------
+     Sponsor inquiry form
+  -------------------------------------------------- */
+  function initSponsorForm() {
+    const form = document.getElementById('sponsor-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitToNetlify(form, 'sponsor-success');
+    });
+  }
+
+  /* --------------------------------------------------
      Smooth scroll for anchor links
   -------------------------------------------------- */
   function initSmoothScroll() {
@@ -240,6 +253,7 @@
     initTabs();
     initRegistrationForm();
     initVolunteerForm();
+    initSponsorForm();
     initSmoothScroll();
     initRaceCards();
     initScrollAnimations();

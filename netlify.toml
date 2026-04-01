@@ -7,7 +7,7 @@
 
 # ---------------------------------------------------------------------------
 # Form notification emails
-# NOTE: Registration and volunteer forms still use Netlify Forms notifications.
+# NOTE: Registration, volunteer, and sponsor inquiry forms use Netlify Forms notifications.
 # Apparel orders are submitted to Supabase through /.netlify/functions/submit-apparel.
 # After deploying, go to Netlify Dashboard → Site settings → Forms →
 # Form notifications → Add notification → Email notification
