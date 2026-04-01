@@ -1781,6 +1781,28 @@ textarea.form-control {
   opacity: 0.6;
 }
 
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-credit a {
+  color: var(--secondary);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition), text-shadow var(--transition);
+}
+
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: white;
+  border-color: var(--secondary);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.55);
+}
+
 @media (min-width: 768px) {
   .footer-bottom {
     flex-direction: row;
